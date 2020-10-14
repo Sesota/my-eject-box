@@ -263,7 +263,7 @@ vnoremap <leader>p "_dP
 
 " In windows, <C-v> is used for pasting. We map <C-b> to <C-v> to enable
 " visual block mode.
-nnoremap <C-q> <C-v>
+nnoremap <C-b> <C-v>
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
