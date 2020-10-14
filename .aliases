@@ -1,0 +1,100 @@
+alias aliases='nvim ~/.oh-my-zsh/custom/.aliases && source ~/.zshrc'
+alias nvim-init='nvim ~/.config/nvim/init.vim'
+alias nvim-coc='nvim ~/.config/init/coc-settings.json'
+
+######## sudo
+alias sudo='sudo '
+alias fuck='sudo !!'
+
+######## apt
+alias apt='sudo apt'
+alias ainstall='sudo apt install'
+alias aupdate='sudo apt-get update'
+alias asearch='sudo apt search'
+alias ainfo='sudo apt info'
+
+######## terminal
+alias cls='clear'
+alias cl='clear && ls && pwd'
+
+######## ls
+alias sl='ls'
+alias ls='ls -AhlF --color=auto  --group-directories-first'
+alias lsg='ls | grep'
+
+######## cd, mv, rm, cp, mkdir
+alias ..='cd ..'
+alias ...='cd ../../'
+alias cd..='cd ..'
+alias cd...='cd ../../'
+
+alias mv='mv -v'
+
+alias cp='cp -v'
+
+alias rm='rm -v'
+
+alias mkdir='mkdir -pv'
+
+######## network and systemctl
+alias ping='ping -c 4'
+
+alias grep='grep --color=auto -n'
+
+alias nstat='sudo netstat -tlnp'
+alias nstatg='sudo netstat -tlnp | grep'
+
+alias ctl='sudo systemctl'
+alias ctlg='sudo systemctl | grep'
+alias ctlstat='sudo systemctl status'
+alias ctlstart='sudo systemctl start'
+alias ctlstop='sudo systemctl stop'
+alias ctlres='sudo systemctl restart'
+alias ctlrel='sudo systemctl reload'
+
+alias fw='sudo firewall-cmd'
+alias fwlist='sudo firewall-cmd --list-all'
+
+######### alias management
+alias editzsh='nvim ~/.zshrc && source ~/.zshrc'
+alias aliasg='alias | grep'
+
+######### git
+alias gitcho='git checkout'
+alias gitchonew='git checkout -b'
+alias gitcholast='git checkout -'
+alias gitfetch='git fetch -p'
+alias gitcommit='git commit -a'
+alias gitpush='git push origin'
+alias gitblist='git branch -a'
+alias gitbdel='git branch -d'
+alias gitstaged='git diff --cached'
+alias gitunstage='git reset HEAD --'
+alias gitstat='git status -sb'
+alias gitadd='git add -p'
+alias gitbclean='git branch --merged | grep -v "*" | xargs -n 1 git branch -d'
+
+######### misc
+alias wget='wget -c'
+
+alias histg='history | grep'
+
+alias shell='pipenv shell'
+
+######## Docker
+alias dc='docker-compose'
+alias dcu='docker-compose up -d'
+alias dcd='docker-compose down'
+alias dcl='docker-compose logs -f'
+
+############################ Functions #################################
+
+mkcd(){
+	mkdir $1
+	cd $1
+}
+
+fwop(){
+	sudo firewall-cmd --zone=public --permanent --add-port=$1/tcp
+	sudo firewall-cmd --reload
+}
