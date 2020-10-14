@@ -2,6 +2,13 @@ alias aliases='nvim ~/.oh-my-zsh/custom/.aliases && source ~/.zshrc'
 alias nvim-init='nvim ~/.config/nvim/init.vim'
 alias nvim-coc='nvim ~/.config/init/coc-settings.json'
 
+######## My Eject Box
+alias inject-zshrc='cp ~/my-eject-box/.zshrc ~/'
+alias inject-aliases='cp ~/my-eject-box/.aliases ~/.oh-my-zsh/custom/'
+alias inject-nvim-init='cp ~/my-eject-box/init.vim ~/.config/nvim/'
+alias inject-nvim-coc='cp ~/my-eject-box/coc-settings.json ~/.config/nvim/'
+alias inject-all='inject-zshrc && inject-aliases && inject-nvim-init && inject-nvim-coc'
+
 ######## sudo
 alias sudo='sudo '
 alias fuck='sudo !!'
