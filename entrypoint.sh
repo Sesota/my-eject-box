@@ -11,4 +11,5 @@ if [ ! -z "$USER_ID" ] && [ "$(id -u me)" != "$USER_ID" ]; then
 fi
 # Setting permissions on /home/me
 chown -R me: /home/me
-exec /sbin/su-exec me tmux -u -2 "$@"
+# exec /sbin/su-exec me tmux -u -2 "$@"
+exec /sbin/su-exec me
