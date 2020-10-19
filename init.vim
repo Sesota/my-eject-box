@@ -55,19 +55,21 @@ set shortmess+=c
 " ============================================================================ "
 
 " === Coc.nvim === "
-" use <tab> for trigger completion and navigate to next complete item
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? coc#_select_confirm() :
+            \ coc#expandableOrJumpable() ?
+            \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
+
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
+let g:coc_snippet_next = '<tab>'
 "Close preview window when completion is done.
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+" autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Wrap in try/catch to avoid errors on initial install before plugin is available
 try
@@ -105,24 +107,6 @@ let g:airline#extensions#hunks#enabled=0
 catch
   echo 'Airline not installed. It should work after running :PlugInstall'
 endtry
-
-" === echodoc === "
-" Enable echodoc on startup
-let g:echodoc#enable_at_startup = 1
-
-" === vim-javascript === "
-" Enable syntax highlighting for JSDoc
-let g:javascript_plugin_jsdoc = 1
-
-" === vim-jsx === "
-" Highlight jsx syntax even in non .jsx files
-let g:jsx_ext_required = 0
-
-" === javascript-libraries-syntax === "
-let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
-
-" === Signify === "
-let g:signify_sign_delete = '-'
 
 " ============================================================================ "
 " ===                                UI                                    === "
@@ -213,12 +197,6 @@ endtry
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
 " ============================================================================ "
-" Quick window switching
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-
 " === coc.nvim === "
 "   <leader>dd    - Jump to definition of current symbol
 "   <leader>dr    - Jump to references of current symbol
@@ -239,7 +217,6 @@ vnoremap <leader>p "_dP
 
 " In windows, <C-v> is used for pasting. We map <C-b> to <C-v> to enable
 " visual block mode.
-nnoremap <C-b> <C-v>
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
