@@ -1,6 +1,14 @@
+######## Temp
+sysc-compile(){
+    g++ -std=c++98 -I. -I/usr/local/systemc-2.3.1/include -L. \
+    -L/usr/local/systemc-2.3.1/lib-linux64 -Wl,-rpath=/usr/local/systemc-2.3.1/lib-linux64 -o \
+    $1 $1.cpp -lsystemc -lm
+}
+
+######## Main
 alias aliases='nvim ~/.oh-my-zsh/custom/.aliases && source ~/.zshrc'
 alias nvim-init='nvim ~/.config/nvim/init.vim'
-alias nvim-coc='nvim ~/.config/init/coc-settings.json'
+alias nvim-coc='nvim ~/.config/nvim/coc-settings.json'
 
 ######## My Eject Box
 alias inject-zshrc='cp ~/my-eject-box/.zshrc ~/'
