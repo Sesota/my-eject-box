@@ -15,6 +15,17 @@ alias eject-nvim-init='cp ~/.config/nvim/init.vim ~/my-eject-box/init.vim'
 alias eject-nvim-coc='cp ~/.config/nvim/coc-settings.json ~/my-eject-box/coc-settings.json'
 alias eject-all='eject-zshrc && eject-aliases && eject-nvim-init && eject-nvim-coc'
 
+######## ETC Docker registry
+etc-docker-push(){
+    docker tag $1 192.168.1.240:5000/$1
+    docker push 192.168.1.240:5000/$1
+    docker image remove $1
+    docker image remove 192.168.1.240:5000/$1
+}
+etc-docker-pull(){
+    docker pull 192.168.1.240:5000/$1
+}
+
 ######## sudo
 alias sudo='sudo '
 alias fuck='sudo !!'

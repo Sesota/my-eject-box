@@ -7,6 +7,7 @@ My lovely eject box. I use it to have portable workspace configs
     - python3 and pip3  
     - nvm and nodejs and then `npm install -g @angular/cli  
     - fzf  
+    - bat (use the .deb file if encountered any problems and then remove it)  
     - ripgrep  
     - zsh, oh-my-zsh, zsh-autocomplete, zsh-syntax-highlighting and powerlevel10k  
     - neovim and then neovim on pip3, vim-plug on neovim  
@@ -16,7 +17,7 @@ My lovely eject box. I use it to have portable workspace configs
 3. execute `inject-all` to import the files into the system  
 4. `source ~/.zshrc`  
 5. Run `:PlugInstall` in neovim  
-6. Run `:CocInstall coc-angular coc-css coc-emmet coc-eslint coc-fzf-preview coc-git coc-html coc-json coc-markdownlint coc-prettier coc-python coc-snippets coc-stylelint coc-tsserver`  
+6. Run `:CocInstall coc-angular coc-css coc-emmet coc-eslint coc-git coc-html coc-json coc-markdownlint coc-prettier coc-python coc-snippets coc-stylelint coc-tsserver`  
 7. Enjoy I think...  
 
 **Note**: Please make a script for this  
