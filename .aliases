@@ -1,6 +1,6 @@
 alias aliases='nvim ~/.oh-my-zsh/custom/.aliases && source ~/.zshrc'
 alias nvim-init='nvim ~/.config/nvim/init.vim'
-alias nvim-coc='nvim ~/.config/init/coc-settings.json'
+alias nvim-coc='nvim ~/.config/nvim/coc-settings.json'
 
 ######## My Eject Box
 alias inject-zshrc='cp ~/my-eject-box/.zshrc ~/'
